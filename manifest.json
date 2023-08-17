@@ -1,35 +1,126 @@
 {
-    "name":"Quoter",
-    "short_name": "Quoter",
-    "start_url" : "/?home=true",
-    "icons": [
+  "name": "Quoter",
+  "short_name": "Quoter",
+  "start_url": "/?home=true",
+  "icons": [
+    {
+      "src": "manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "categories": ["quote", "text", "life"],
+  "orientation": "any",
+  "description": "A collection of 10 quotes",
+  "id": "?homescreen=1",
+  "launch_handler": {
+    "client_mode": ["focus-existing, auto"]
+  },
+  "screenshots": [
+    {
+      "src": "s1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Quote 1"
+    },
+    {
+      "src": "s2.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Quote 2"
+    }
+  ],
+
+  "share_target": {
+    "action": "/shared-content-receiver/",
+    "method": "GET",
+    "params": {
+      "title": "name",
+      "text": "description",
+      "url": "link"
+    }
+  },
+
+  "file_handlers": [
+    {
+      "action": "/handle-image-file",
+      "accept": {
+        "image/png": [".png"],
+        "image/jpg": [".jpg"],
+        "image/jpeg": [".jpeg"]
+      }
+    }
+  ],
+
+  "display_override": ["fullscreen", "minimal-ui"],
+  "display": "standalone",
+  "scope_extensions": [{ "origin": "https://quote-r.netlify.app/" }],
+  "protocol_handlers": [
+    {
+      "protocol": "web+music",
+      "url": "/play?track=%s"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Today's Quote",
+      "url": "/",
+      "description": "List of quotes for today"
+    }
+  ],
+
+  "edge_side_panel": {
+    "preferred_width": 700
+  },
+
+  "widgets": [
+    {
+      "name": "Quote mini quoter",
+      "description": "widget for nothing",
+      "tag": "Quoter",
+      "template": "quoter-template",
+      "ms_ac_template": "widgets/mini-player-template.json",
+      "data": "widgets/mini-player-data.json",
+      "type": "application/json",
+      "screenshots": [
         {
-          "src": "manifest-icon-192.maskable.png",
-          "sizes": "192x192",
-          "type": "image/png",
-          "purpose": "any"
-        },
-        {
-          "src": "manifest-icon-192.maskable.png",
-          "sizes": "192x192",
-          "type": "image/png",
-          "purpose": "maskable"
-        },
-        {
-          "src": "manifest-icon-512.maskable.png",
-          "sizes": "512x512",
-          "type": "image/png",
-          "purpose": "any"
-        },
-        {
-          "src": "manifest-icon-512.maskable.png",
-          "sizes": "512x512",
-          "type": "image/png",
-          "purpose": "maskable"
+          "src": "s1.png",
+          "sizes": "600x400",
+          "label": "mini -quote"
         }
-      ] ,
-    "theme_color":"#000000",
-    "background_color":"#ffffff",
-    
-    "display" : "fullscreen"
+      ],
+      "icons": [
+        {
+          "src": "./icons/apple-icon-180.png",
+          "sizes": "16x16"
+        }
+      ],
+      "auth": false,
+      "update": 86400
+    }
+  ]
+
 }
