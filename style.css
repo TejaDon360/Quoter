@@ -1,0 +1,29 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.container {
+  padding: 200px;
+  margin-bottom: -180px;
+  width: 50px;
+}
+
+.container .card {
+  border: none;
+
+  box-shadow: 0 0 10px rgb(231, 231, 231);
+}
+
+.btn {
+  max-width: 120px;
+}
